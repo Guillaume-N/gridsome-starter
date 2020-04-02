@@ -41,6 +41,10 @@ body {
   line-height: 1.5;
 }
 
+.body {
+  background: #f3f7f9;
+}
+
 .layout {
   max-width: 760px;
   margin: 0 auto;
