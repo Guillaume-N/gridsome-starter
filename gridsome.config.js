@@ -7,5 +7,16 @@
 module.exports = {
   siteName: "Guillaume",
   siteDescription: "Personal blog",
-  plugins: []
+  plugins: [
+    {
+      use: "@gridsome/source-filesystem",
+      options: {
+        typeName: "BlogPost",
+        path: "./blog/posts/**/*.md"
+      }
+    }
+  ],
+  templates: {
+    BlogPost: "/posts/:slug"
+  }
 };
