@@ -4,7 +4,8 @@
     <g-image
       alt="Example image"
       src="~/assets/images/favicon.png"
-      width="135"
+      width="100"
+      height="100"
     />
 
     <h1>Hello, world!</h1>
