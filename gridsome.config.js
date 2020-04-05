@@ -9,6 +9,16 @@ module.exports = {
   siteDescription: "Personal blog",
   plugins: [
     {
+      use: "@gridsome/source-contentful",
+      options: {
+        space: "abcde",
+        accessToken: "abcde",
+        host: "cdn.contentful.com",
+        environment: "master",
+        typeName: "Contentful",
+      },
+    },
+    {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "BlogPost",
@@ -25,6 +35,6 @@ module.exports = {
     },
   ],
   templates: {
-    BlogPost: "/posts/:slug",
+    BlogPost: "/posts/:title",
   },
 };
