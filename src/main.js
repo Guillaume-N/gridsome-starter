@@ -28,6 +28,6 @@ export default function (Vue, { router, head, isClient }) {
     src: "https://cdn.snipcart.com/scripts/2.0/snipcart.js",
     body: true,
     id: "snipcart",
-    "data-api-key": "YOUR_SNIPCART_API_KEY",
+    "data-api-key": process.env.SNIPCART_API_KEY,
   });
 }
