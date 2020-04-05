@@ -12,11 +12,19 @@ module.exports = {
       use: "@gridsome/source-filesystem",
       options: {
         typeName: "BlogPost",
-        path: "./blog/posts/**/*.md"
-      }
-    }
+        path: "./blog/posts/**/*.md",
+        refs: {
+          // Create a Tag content type and its nodes automatically.
+          tags: {
+            typeName: "Tag",
+            route: "/tags/:id",
+            create: true,
+          },
+        },
+      },
+    },
   ],
   templates: {
-    BlogPost: "/posts/:slug"
-  }
+    BlogPost: "/posts/:slug",
+  },
 };
