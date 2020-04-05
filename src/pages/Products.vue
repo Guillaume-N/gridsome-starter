@@ -8,7 +8,14 @@
         :key="edge.node.id"
       >
         <h2 style="margin-bottom: 0.25em;">{{edge.node.name}}</h2>
-        <span>{{edge.node.price}}</span>
+        <button
+          class="snipcart-add-item cart-button"
+          :data-item-id="edge.node.id"
+          :data-item-name="edge.node.name"
+          :data-item-image="edge.node.image.file.url"
+          :data-item-price="edge.node.price"
+          data-item-url="http://google.fr"
+        >Buy for ${{edge.node.price}}</button>
         <g-image
           :src="edge.node.image.file.url"
           style="width: 100%; height: 300px; object-fit: contain"
@@ -34,6 +41,7 @@ query ($page: Int)
 <script>
 import { Pager } from "gridsome";
 // to know more about meta infos https://github.com/nuxt/vue-meta
+//TODO: remplacer data-item-url par l'url de la page du produit si je crée une page produit
 export default {
   components: {
     Pager
@@ -58,5 +66,16 @@ export default {
   font-size: 1.5rem;
   letter-spacing: 0.5px;
   padding: 40px 20px;
+}
+
+.cart-button {
+  background-color: forestgreen;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 8px 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-size: 1rem;
 }
 </style>
